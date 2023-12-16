@@ -1,0 +1,1274 @@
+/* Rutherford Labbe: 09-28-2023 */
+
+/* Import the fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@700&family=Roboto:wght@900&family=Rubik+Mono+One&display=swap');
+
+/* Imports normalize */
+@import "normalize.css";
+
+
+/* Set the main colors in use */
+:root {
+    --HoneyFlower: #622f90;
+    --TextColor: #f5deb3;
+  }
+
+
+/* Affects every element of the page*/
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/*--------------------- RETURN to LATER ----------------------*/
+
+/* Hides the scroll bar */
+html{
+    overflow: hidden;
+}
+
+/* Sets the body color */
+body{
+  background-color: #8f369e;
+}
+
+/*--------------------- RETURN to LATER ----------------------*/
+
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+
+/* The video takes up the full width of the parent element while maintaining its aspect ratio */
+#myVideo{
+  position: fixed;
+  left: 5%;
+
+  /* Set the dimensions of the video */
+  width: 90%;
+  height: 37em;
+
+  border-radius: 8px;
+
+  /* Scales the video proportionally */
+  object-fit: cover;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.grid_container_section{
+  /* Set the width and height for the different sections */
+  width: 90%;
+  height: 33em;
+
+  /* 1 row of 8 no columns */
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  gap: 7em;
+
+  /* Centers the elements horizontally and vertically */
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section{
+  /* Centers the elements horizontally and vertically */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Set the width and height for the different sections */
+  width: 87%;
+  height: 37em;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+/* Adds scrollbar */
+.grid_item_new_and_features,
+.grid_item_men,
+.grid_item_women,
+.grid_item_kids,
+.grid_item_accessories,
+.grid_item_sales{
+  overflow: auto;
+}
+
+/* Hides the scrollbar for Chrome, Safari and Opera */
+.grid_item_new_and_features::-webkit-scrollbar,
+.grid_item_men::-webkit-scrollbar,
+.grid_item_women::-webkit-scrollbar,
+.grid_item_kids::-webkit-scrollbar,
+.grid_item_accessories::-webkit-scrollbar,
+.grid_item_sales::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hides the scrollbar for IE, Edge and Firefox */
+.grid_item_new_and_features,
+.grid_item_men,
+.grid_item_women,
+.grid_item_kids,
+.grid_item_accessories,
+.grid_item_sales {
+  scrollbar-width: none;
+}
+
+.grid_item_new_and_features ul,
+.grid_item_men ul,
+.grid_item_women ul,
+.grid_item_kids ul,
+.grid_item_accessories ul,
+.grid_item_sales ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.grid_item_new_and_features a,
+.grid_item_men a,
+.grid_item_women a,
+.grid_item_kids a,
+.grid_item_accessories a,
+.grid_item_sales a {
+  display: block;
+  color: whitesmoke;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+
+}
+
+.grid_item_new_and_features a:hover,
+.grid_item_men a:hover,
+.grid_item_women a:hover,
+.grid_item_kids a:hover,
+.grid_item_accessories a:hover,
+.grid_item_sales a:hover{
+  background-color: whitesmoke;
+  color: var(--HoneyFlower);
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.text{
+  /* Centers the elements horizontally and vertically */
+  position: fixed;
+  top: 12.5%;
+  left: 50.6%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 33em;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  color: wheat;
+
+  /* Adds a slight text shadow */
+  text-shadow: 0px 3px 3px rgba(90, 86, 86, 0.5);
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.nike_swish_logo{
+  /* Centers the element */
+  position: fixed;
+  top: 14.5%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+
+  /* Brings element one layer up */
+  z-index: 1;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+
+.dot_container{
+  /* Centers the element */
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*background-color: blue;*/
+
+  z-index: 1;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 50px;
+  margin: 0 2px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+
+  /* Code for Glass Morphism */
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 0px );
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur( 0px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.active, .dot:hover {
+  background-color: whitesmoke;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 0.7s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.heart_icon{
+  /* Centers the element */
+  position: absolute;
+  top: 14%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  
+  /* Brings element one layer up */
+  z-index: 1;
+
+  /* Increases icon size */
+  font-size: 1.5em;
+  color: whitesmoke;
+}
+
+.bag_icon{
+  /* Centers the element */
+  position: absolute;
+  top: 14%;
+  left: 78%;
+  transform: translate(-50%, -50%);
+   
+  /* Brings element one layer up */
+  z-index: 1;
+ 
+  /* Increases icon size */
+  font-size: 1.5em;
+  color: whitesmoke;
+}
+
+.sign_in_button{
+  /* Centers the element */
+  position: absolute;
+  top: 14%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+   
+  /* Brings element one layer up */
+  z-index: 1;
+}
+
+.sign_in_button h4{
+  font-family: "Rubik";
+  color: whitesmoke;
+  font-size: 1.3em;
+}
+
+/* Color changes on hover */
+.heart_icon:hover, .bag_icon:hover, .sign_in_button > h4:hover{
+  color: var(--HoneyFlower);
+  cursor: pointer;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.grid_container_home, 
+.grid_container_new_and_features, 
+.grid_container_men,
+.grid_container_women,
+.grid_container_kids,
+.grid_container_accessories,
+.grid_container_sales{
+  
+  /* The dimensions of the rectangular box */
+  width: 85%;
+  height: 26em;
+  
+  /* Centers the elements horizontally and vertically */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.grid_container_home{
+
+  position: absolute;
+  top: 60%;
+
+  display: grid;
+  grid-template-columns: 45% 50%;
+  gap: 2em;
+
+}
+
+/* Grid for the texts */
+.grid_item_home > h2{
+  font-size: 5.1em;
+  font-family: "Roboto";
+  color: var(--TextColor);
+
+  /* Adds a slight text shadow */
+  text-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+}
+
+/* Grid for the image */
+.grid_item_home > p{
+  font-size: 0.9em;
+  font-family: "Quicksand";
+
+  /* Sets color */
+  color: whitesmoke;
+  
+  /* Adds a slight text shadow */
+  text-shadow: 0px 3px 3px rgba(90, 86, 86, 0.5);
+}
+
+/* Aspect ratio of images remains the same */
+.grid_item_home img{
+
+  /* Ensure the image fits within its container */
+  max-width: 97%; 
+
+  /* Allow the image to maintain its aspect ratio */
+  height: auto; 
+
+  /* Adds shadow to the image */
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+
+  border-radius: 20px;
+  /*outline: 20px solid whitesmoke;*/
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+/* 1 row - 3 columns */
+.grid_container_header{
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin-top: 2em;
+
+  /* Center the elements vertically */
+  font-size: smaller;
+
+  /* Display grid 3 columns */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+/* Sets the dimension of the header element */
+header{
+  position: sticky;
+  width: 50em;
+  height: 4em;
+
+  margin: 39em auto 0 auto;
+  border-radius: 30px;
+}
+
+/* Positions header element and its content */
+.nav_header{
+  /* Centers the elements horizontally and vertically */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Centers texts */
+  text-align: center;
+
+  /* Stretches width to max */
+  width: 100%;
+  
+  /* Add slight text shadow */
+  text-shadow: 3px 2px 3px rgba(45, 2, 2, 0.2);
+}
+
+/* Align the text elements side by side instead of top to bottom */
+.nav_header li {
+  /* Streches elements horizontally */
+  display: inline-block;
+  font-size: 1.6em;
+
+  /* Padding top and bottom is 0 - left and right is 6px */
+  padding: 0 6px;
+  font-family: "Rubik";
+
+}
+
+/* Removes the underline under the texts */
+.nav_header span{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+/* Changes the text color on hover */
+.nav_header span:hover{
+  color: var(--HoneyFlower);
+  cursor: pointer;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+/* Sets the icon that links to the home section */
+#home{
+  position: sticky;
+  width: 4em;
+  height: 4em;
+
+  margin: 39em 6px 0 auto;
+}
+
+/* The icon for both home and footer */
+.home_icon, .footer_icon{
+  /* Centers the elements horizontally and vertically */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+
+  text-shadow: 3px 2px 3px rgba(45, 2, 2, 0.2);
+}
+
+/* Icon changes color on hover */
+.home_icon:hover, .footer_icon:hover{
+  color: var(--HoneyFlower);
+  cursor: pointer;
+}
+
+/* Sets the icon that links to the footer section */
+#footer{
+  position: sticky;
+  width: 4em;
+  height: 4em;
+
+  margin: 39em auto 0 6px;
+  border-radius: 55px;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.social_links_container{
+
+  /* Controll distance between icons */
+  width: 60%;
+
+  /* 1 row - 4 columns */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  font-size: 1.3em;
+
+  /* Centers icons horizontally - 20px top margin */
+  margin: 20px auto 0 auto;
+
+  color: whitesmoke;
+  opacity: 0.7;
+
+  /* Centers element */
+  place-items: center;
+}
+
+.twitter_icon:hover,
+.facebook_icon:hover,
+.youtube_icon:hover,
+.instagram_icon:hover{
+  color: var(--HoneyFlower);
+}
+
+.links_container{
+
+  /* Controll distance between the group of links */
+  width: 90%;
+
+  /* 1 row - 4 columns */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  /* Centers icons horizontally - 20px top margin */
+  margin: 20px auto 0 auto;
+
+}
+
+/* Sets the font for the first group of links and the first link of each group */
+.links_one ul,
+.first_link{
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Sets the font for the rest of the links */
+.links_one ul,
+.links_two ul,
+.links_three ul,
+.links_four{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Removes style on all links */
+.links_one ul,
+.links_two ul,
+.links_three ul,
+.links_four ul{
+  list-style-type: none;
+}
+
+/* Add spaces between links */
+.links_one li,
+.links_two li,
+.links_three li,
+.links_four li{
+  padding-top: 12px;
+}
+
+/* Sets base color on all links */
+.links_one a,
+.links_two a,
+.links_three a,
+.links_four a{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+/* Changes the color of all links on hover */
+.links_one a:hover,
+.links_two a:hover,
+.links_three a:hover,
+.links_four a:hover{
+  color: var(--HoneyFlower);
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.copyright_text{
+
+  /* Centers element horizontally and vertically */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: "Roboto", sans-serif;
+  color: whitesmoke;
+  opacity: 0.7;
+
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.grid_container_new_and_features, 
+.grid_container_men,
+.grid_container_women,
+.grid_container_kids,
+.grid_container_accessories,
+.grid_container_sales{
+  /* The dimensions of the rectangular box */
+  width: 90%;
+  height: 26em;
+
+  /* Centers the elements horizontally and vertically */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Sets up grid */
+  display: grid;
+  grid-template-columns: 20%;
+  gap: 1em;
+
+}
+
+.grid_item_new_and_features,
+.grid_item_men,
+.grid_item_women,
+.grid_item_kids,
+.grid_item_accessories,
+.grid_item_sales{
+  border-color: whitesmoke;
+  border-style: none solid;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.nav_men, 
+.nav_women,
+.nav_kids{
+  /* Centers the elements horizontally and vertically */
+  position: absolute;
+  top: 3%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+
+  /* Centers texts */
+  text-align: center;
+
+  /* Stretches width to max */
+  width: 100%;
+
+  /* Add slight text shadow */
+  text-shadow: 3px 2px 3px rgba(14, 1, 1, 0.2);
+}
+
+/* Align the text elements side by side instead of top to bottom */
+.nav_men li,
+.nav_women li,
+.nav_kids li {
+  display: inline-block;
+  font-size: 1.135em;
+
+  /* Padding top and bottom is 0 - left and right is 10px */
+  padding: 0 10px;
+  font-family: "Rubik";
+
+  z-index: 2;
+}
+
+/* Removes the underline under the texts */
+.nav_men a,
+.nav_women a,
+.nav_kids a{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+/* Changes the text color on hover */
+.nav_men a:hover,
+.nav_women a:hover,
+.nav_kids a:hover{
+  color: var(--HoneyFlower);
+  cursor: pointer;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+/* Footer section */
+.grid_container_footer{
+  
+  /* The dimensions of the rectangular box */
+  width: 85%;
+  height: 26em;
+
+  /* Centers the elements horizontally and vertically */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+/*--------------------------------------------------------------------- Media Query at 768px ----------------------------------------------------------------------------*/
+
+  @media screen and (min-width: 768px){
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .nike_swish_logo{
+      left: 21.5%;
+      top: 14%;
+    }
+
+    .heart_icon{
+      left: 75%;
+      top: 14%;
+    }
+    
+    .bag_icon{
+      left: 78%;
+      top: 14%;
+    }
+    
+    .sign_in_button{
+      left: 82%;
+      top: 14%;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .dot_container{
+      top: 14%;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 8px;
+      width: 50px;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .grid_container_new_and_features, 
+    .grid_container_men,
+    .grid_container_women,
+    .grid_container_kids,
+    .grid_container_accessories,
+    .grid_container_sales
+    {
+
+      /* Display grid covers 20% of parent element */
+      grid-template-columns: 20%;
+      
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+  }
+
+/*--------------------------------------------------------------------- Media Query at 360px ----------------------------------------------------------------------------*/
+
+  @media screen and (min-width: 360px) {
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    /* Set header links to hidden */
+    .grid_container_header{
+      visibility: visible;
+      padding-top: 2em;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .grid_container_new_and_features, 
+    .grid_container_men,
+    .grid_container_women,
+    .grid_container_kids,
+    .grid_container_accessories,
+    .grid_container_sales
+    {
+
+      /* Display grid covers 100% of parent element */
+      grid-template-rows: 100%;
+      
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+  }
+
+/*--------------------------------------------------------------------- Media Query at 1224px ----------------------------------------------------------------------------*/
+
+  @media screen and (max-width:  1224px){
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .nike_swish_logo{
+      left: 25%;
+      top: 12%;
+    }
+
+    .heart_icon{
+      left: 45%;
+      top: 12%;
+    }
+    
+    .bag_icon{
+      left: 59%;
+      top: 12%;
+    }
+    
+    .sign_in_button{
+      left: 75%;
+      top: 12%;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .dot_container{
+      top: 89%;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 18px;
+      width: 18px;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    /* Set header links to hidden */
+    .grid_container_header{
+      visibility: hidden;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .grid_container_new_and_features, 
+    .grid_container_men,
+    .grid_container_women,
+    .grid_container_kids,
+    .grid_container_accessories,
+    .grid_container_sales
+    {
+
+      /* Display grid covers 100% of parent element */
+      grid-template-columns: 100%;
+
+      /* Display grid covers 20% of parent element */
+      grid-template-rows: 20%;
+
+    }
+
+    .grid_item_new_and_features,
+    .grid_item_men,
+    .grid_item_women,
+    .grid_item_kids,
+    .grid_item_accessories,
+    .grid_item_sales{
+
+      position: relative;
+      top: 22em;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+    .nav_men, 
+    .nav_women,
+    .nav_kids{
+
+      /* Centers the elements horizontally */
+      left: 50%;
+    }
+
+    /* Align the text elements side by side instead of top to bottom */
+    .nav_men li,
+    .nav_women li,
+    .nav_kids li {
+
+      /* Reduce font size */
+      font-size: 1.1em;
+
+      /* Padding top and bottom is 0 - left and right is 5px */
+      padding: 0 5px;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+
+    .grid_item_new_and_features li,
+    .grid_item_men li,
+    .grid_item_women li,
+    .grid_item_kids li,
+    .grid_item_accessories li,
+    .grid_item_sales li {
+      display: inline-block;
+    }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+      /* Hides image */
+      .grid_item_home img{
+        visibility: hidden;
+      }
+
+      .grid_container_home{
+        /* Keeps H2 and P elements together - prevent gaps */
+        grid-template-columns: 45%;
+      }
+
+      /* Stretches the text element */
+      .grid_item_home{
+        display: grid;
+        grid-template-columns: 230%;
+      }
+
+    /*-------------------------------------- Media Sections -------------------------------------------*/
+
+  }
+
+/* ------------------------------------------------Media Queries---------------------------------------------- */
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.layer_2{
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 85%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.layer_3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.grid_item_box{
+  width: 10em;
+  height: 10em;
+  background-color: black;
+
+  margin: 0 auto;
+}
+
+.grid_item_box,
+.grid_item_box img,
+.grid_item_box > .overlay{
+  border-radius: 20px;
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+.grid_container_new_and_features > .layer_2,
+.grid_container_accessories > .layer_2,
+.grid_container_sales > .layer_2{
+  top: 50%;
+  height: 100%;
+}
+
+
+
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+/* Set image size to fit the parent element */
+.sport_shoes{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Allows overlay */
+.grid_item_box {
+  position: relative;
+}
+
+/* Adds overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+  height: 100%;
+  width: 100%;
+
+  opacity: 0;
+  transition: .5s ease;
+  
+  background-color: rgba(255, 255, 255, 0.686);
+
+}
+
+.overlay:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.overlay h2{
+  /* Centers the element vertically and horizontally */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+  font-family: "Montserrat";
+  font-size: 3em;
+  padding: auto;
+  place-items: center;
+  color: var(--HoneyFlower);
+  
+}
+
+.overlay p{
+  /* Centers the element vertically and horizontally */
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  padding: auto;
+  place-items: center;
+  color: var(--HoneyFlower);
+}
+
+/*-------------------------------------------- Section Divider ----------------------------------------------*/
+
+@media screen and (min-width: 360px) {
+
+  .layer_3{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .top_layer{
+      margin-top: 11.5em;
+  }
+
+  .bottom_layer_3{
+      margin-bottom: 3em;
+  }
+
+  /* ---------------------------------------------------------------- */
+
+  .layer_2{
+    top: 57%;
+    left: 50%;
+    z-index: -1;
+  }
+
+  /* ---------------------------------------------------------------- */
+
+  .grid_container_men .layer_3 .top_layer,
+  .grid_container_women .layer_3 .top_layer,
+  .grid_container_kids .layer_3 .top_layer{
+    margin-top: 13em;
+  }
+
+  .grid_container_men .layer_2,
+  .grid_container_women .layer_2,
+  .grid_container_kids .layer_2{
+    top: 50%;
+  }
+
+  /* ---------------------------------------------------------------- */
+
+
+  .links_container{
+    /* Controll distance between the group of links */
+    width: 90%;
+
+    height: 20em;
+  
+    /* 1 row - 4 columns */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  
+    /* Centers icons horizontally - 20px top margin */
+    margin: 20px auto 0 auto;
+
+    padding: 0 20px;
+  
+    /*background-color: #ffffff49;*/
+
+    border-color: whitesmoke;
+    border-style: none solid;
+    border-radius: 5px;
+
+    /* Adds vertical scroll */
+    overflow-y: scroll;
+  }
+
+  .links_one,
+  .links_two,
+  .links_three,
+  .links_four{
+    padding-bottom: 20px;
+  }
+
+  /* Hides the scrollbar for Chrome, Safari and Opera */
+  .links_container::-webkit-scrollbar{
+    display: none;
+  }
+
+  /* Hides the scrollbar for IE, Edge and Firefox */
+  .links_container{
+    scrollbar-width: none;
+  }
+
+}
+
+
+@media screen and (min-width: 600px) {
+
+  .layer_3{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .top_layer{
+      margin-top: 11.5em;
+  }
+
+  .bottom_layer_2{
+      margin-bottom: 3em;
+  }
+
+  .layer_2{
+    top: 57%;
+    left: 50%;
+  }
+
+  .grid_container_men .layer_3 .top_layer,
+  .grid_container_women .layer_3 .top_layer,
+  .grid_container_kids .layer_3 .top_layer{
+    margin-top: 14em;
+  }
+
+}
+
+
+@media screen and (min-width: 868px) {
+
+  .layer_3{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  .top_layer{
+      margin-top: 11.5em;
+  }
+
+  .bottom_layer_2{
+      margin-bottom: 3em;
+  }
+
+  .grid_item_box{
+    width: 8em;
+    height: 8em;
+  }
+
+  .layer_2{
+    top: 45%;
+    left: 50%;
+  }
+
+  .grid_container_men .layer_3 .top_layer,
+  .grid_container_women .layer_3 .top_layer,
+  .grid_container_kids .layer_3 .top_layer{
+    margin-top: 10em;
+  }
+
+  .grid_container_new_and_features > .layer_2,
+  .grid_container_accessories > .layer_2,
+  .grid_container_sales > .layer_2{
+    top: 40%;
+    height: 100%;
+  }
+
+}
+
+@media screen and (min-width: 950px){
+
+  .links_container{
+    /* Controll distance between the group of links */
+    width: 90%;
+
+    /* Adds height for scroll */
+    height: 20em;
+  
+    /* 1 row - 4 columns */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  
+    /* Centers icons horizontally - 20px top margin */
+    margin: 20px auto 0 auto;
+
+    padding: 0 20px;
+
+    /* Adds vertical scroll */
+    overflow-y: scroll;
+  }
+
+  .links_one,
+  .links_two,
+  .links_three,
+  .links_four{
+    padding-bottom: 20px;
+  }
+  
+}
+
+@media screen and (min-width: 1224px) {
+
+  .layer_3{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  .top_layer{
+      margin-top: 12em;
+  }
+
+  .bottom_layer{
+      margin-bottom: 3em;
+  }
+
+  /* ---------------------------------------------------------------- */
+
+  .grid_container_men .layer_3 .top_layer,
+  .grid_container_women .layer_3 .top_layer,
+  .grid_container_kids .layer_3 .top_layer{
+    margin-top: 15em;
+  }
+
+  .grid_container_men .layer_2,
+  .grid_container_women .layer_2,
+  .grid_container_kids .layer_2{
+    top: 50%;
+  }
+
+
+  /* ---------------------------------------------------------------- */
+
+  .grid_item_box{
+    width: 10em;
+    height: 10em;
+  }
+
+  .layer_2{
+    top: 55%;
+    left: 61%;
+  }
+
+  .grid_container_new_and_features > .layer_2,
+  .grid_container_accessories > .layer_2,
+  .grid_container_sales > .layer_2{
+    top: 50%;
+    height: 100%;
+  }
+
+}
+
+

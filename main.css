@@ -367,11 +367,8 @@ section{
 
 /* 1 row - 3 columns */
 .grid_container_header{
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  
+  /* Bring it down 2em */
   margin-top: 2em;
 
   /* Center the elements vertically */
